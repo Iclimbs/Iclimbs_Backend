@@ -185,7 +185,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <select name="services" id="service" class="form-control">
-                    <option value="">Web Development </option>
+                    <option value="">Web Development</option>
                     <option value="">Mobile App Development</option>
                     <option value="">Digital Transformation</option>
                     <option value="">Customized Software Solutions</option>
@@ -360,6 +360,45 @@
       </div>
     </section>
 
+    <!-- ======================================== Success Popup ======================================== -->
+    <!-- <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <p>You have successfully submitted the form</p>
+      </div>
+    </div>  -->
+    <!-- <div id="popup" class="popup">
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="icon-box">
+                <i class="material-icons">&#xE876;</i>
+              </div>
+              <h4 class="modal-title w-100">Awesome!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">
+                Your booking has been confirmed. Check your email for detials.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success btn-block" data-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  -->
+
+    <div class="popup" id="popup">
+      <img src="./img/tick.png" alt="tick">
+      <h2>Thank You</h2>
+      <p>Your Details has been successfully submitted. Thanks!</p>
+      <button type="button" onclick="openPopup()">OK</button>
+    </div>
+
     <!-- ======================================== SCROLL TO TOP ICON ======================================== -->
     <a href="#" class="scroll-up">
       <i class="fal fa-chevron-up"></i>
@@ -403,18 +442,16 @@
         };
         // console.log(payload);
         try {
-          const response = await fetch(
-            "/api/v1/contact/new",
-            {
-              method: "POST",
-              // Set the FormData instance as the request body
-              body: JSON.stringify(payload),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const response = await fetch("/api/v1/contact/new", {
+            method: "POST",
+            // Set the FormData instance as the request body
+            body: JSON.stringify(payload),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           console.log(await response.json());
+          showPopup();
         } catch (e) {
           console.error(e);
         }
@@ -426,5 +463,39 @@
         sendData();
       });
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/66556c9e9a809f19fb35e595/1huur0jge";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- Success Popup Script Starting  -->
+    <script>
+      function showPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+      }
+      document.getElementsByClassName("close")[0].onclick = function () {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+      };
+      window.onclick = function (event) {
+        var popup = document.getElementById("popup");
+        if (event.target == popup) {
+          popup.style.display = "none";
+        }
+      };
+    </script>
+    <!-- Success Popup Script Ending  -->
   </body>
 </html>

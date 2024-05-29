@@ -1833,8 +1833,8 @@ i {
   position: fixed;
   height: 50px;
   width: 50px;
-  right: 40px;
-  bottom: 40px;
+  right: 30px;
+  bottom: 100px;
   transition: .4s;
   text-align: center;
   z-index: 1;
@@ -2341,7 +2341,7 @@ h2 {
   border: none;
 }
 
-.job-desc #openPopup  {
+.job-desc #openPopup {
   padding: 6px 36px 6px 36px;
   background-color: #fb383b;
   color: white;
@@ -2376,8 +2376,10 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
-  z-index: 999; /* Make sure the popup appears on top */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  z-index: 999;
+  /* Make sure the popup appears on top */
 }
 
 /* Popup content */
@@ -2385,9 +2387,11 @@ h2 {
   background-color: white;
   padding: 20px;
   width: 60%;
-  margin: 20px auto; /* Center the popup */
+  margin: 20px auto;
+  /* Center the popup */
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Drop shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* Drop shadow */
   align-items: center;
 }
 
@@ -2435,10 +2439,11 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color:white;
+  background-color: white;
   border: 1px solid #454545;
   color: #000;
 }
+
 .customPopup {
   display: none;
   position: fixed;
@@ -2463,4 +2468,197 @@ form input[type="submit"]:hover {
   top: 5px;
   right: 10px;
   cursor: pointer;
+}
+
+
+/* Success Popup Form Starting  */
+/* 
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-content p {
+  font-size: 16px;
+  color: #333;
+} */
+
+
+
+/* Success Popup Form Ending  */
+
+/* 
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.modal-confirm {
+  color: #636363;
+  width: 325px;
+  font-size: 14px;
+}
+
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.modal-confirm .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+}
+
+.modal-confirm .form-control,
+.modal-confirm .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+
+.modal-confirm .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.modal-confirm .icon-box {
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -70px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: #82ce34;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.modal-confirm .icon-box i {
+  font-size: 58px;
+  position: relative;
+  top: 3px;
+}
+
+.modal-confirm.modal-dialog {
+  margin-top: 80px;
+}
+
+.modal-confirm .btn {
+  color: #fff;
+  border-radius: 4px;
+  background: #82ce34;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+}
+
+.modal-confirm .btn:hover,
+.modal-confirm .btn:focus {
+  background: #6fb32b;
+  outline: none;
+}
+
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+} */
+
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+}
+
+.popup img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+  font-size:38px ;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button{
+  margin: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6fd649;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
 }
