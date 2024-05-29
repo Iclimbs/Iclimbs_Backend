@@ -42,6 +42,12 @@
       src="https://kit.fontawesome.com/b19a7c7976.js"
       crossorigin="anonymous"
     ></script>
+    <!-- ======================================== Google reCaptcha Starting  ======================================== -->
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- ======================================== Google reCaptcha Ending  ======================================== -->
+
     <link rel="stylesheet" href="ticker.css" />
     <title>iCLIMBS - Contact Us</title>
   </head>
@@ -173,6 +179,7 @@
                     id="name"
                     class="form-control"
                     placeholder="Your Name"
+                    required
                   />
                 </div>
                 <div class="form-group col-md-6">
@@ -181,39 +188,41 @@
                     id="email"
                     class="form-control"
                     placeholder="Email Address"
+                    required
                   />
                 </div>
                 <div class="form-group col-md-6">
-                  <select name="services" id="service" class="form-control">
-                    <option value="">Web Development</option>
-                    <option value="">Mobile App Development</option>
-                    <option value="">Digital Transformation</option>
-                    <option value="">Customized Software Solutions</option>
+                  <select name="services" id="service" class="form-control" required>
+                    <option value="">Our Services</option> 
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App Development">
+                      Mobile App Development
+                    </option>
+                    <option value="Digital Transformation">
+                      Digital Transformation
+                    </option>
+                    <option value="Customized Software Solutions">
+                      Customized Software Solutions
+                    </option>
                   </select>
                 </div>
-                <!-- <div class="form-group col-md-6">
-                  <select name="time" id="time" class="form-control">
-                     <option value=""></option>
-                     <option value=""></option>
-                     <option value=""></option>
-                     <option value=""></option>
-                     <option value=""></option>
-                   </select>
-                </div> -->
+
                 <div class="form-group col-md-6">
                   <input
                     type="number"
                     id="phone"
                     class="form-control"
                     placeholder="Phone Number"
+                    required
                   />
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                   <input
                     type="text"
                     id="subject"
                     class="form-control"
                     placeholder="Subject"
+                    required
                   />
                 </div>
                 <div class="form-group col-12">
@@ -223,9 +232,15 @@
                     rows="8"
                     cols="80"
                     placeholder="Write Message"
+                    required
                   ></textarea>
                 </div>
               </div>
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LeOi-spAAAAAJ4xqrlJNOUjMnFqfesPLerzAM5Z"
+              ></div>
+
               <button type="submit" class="btn layer-btn">SEND MESSAGE</button>
             </form>
           </div>
@@ -361,42 +376,28 @@
     </section>
 
     <!-- ======================================== Success Popup ======================================== -->
-    <!-- <div id="popup" class="popup">
-      <div class="popup-content">
-        <span class="close">&times;</span>
-        <p>You have successfully submitted the form</p>
-      </div>
-    </div>  -->
-    <!-- <div id="popup" class="popup">
-      <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-confirm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="icon-box">
-                <i class="material-icons">&#xE876;</i>
-              </div>
-              <h4 class="modal-title w-100">Awesome!</h4>
-            </div>
-            <div class="modal-body">
-              <p class="text-center">
-                Your booking has been confirmed. Check your email for detials.
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-success btn-block" data-dismiss="modal">
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  -->
 
-    <div class="popup" id="popup">
+    <!-- <div class="popup" id="popup">
       <img src="./img/tick.png" alt="tick">
       <h2>Thank You</h2>
       <p>Your Details has been successfully submitted. Thanks!</p>
       <button type="button" onclick="openPopup()">OK</button>
+    </div> -->
+
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Modal Title</h2>
+          <span class="close-btn" id="close-btn">&times;</span>
+        </div>
+        <div class="modal-content">
+          <p>
+            This is an eye-catching and beautiful modal popup. You can add any
+            content here!
+          </p>
+          <button class="btn">Action Button</button>
+        </div>
+      </div>
     </div>
 
     <!-- ======================================== SCROLL TO TOP ICON ======================================== -->
@@ -426,6 +427,7 @@
       async function sendData() {
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
+        const service = document.getElementById("service").value;
         const phone = document.getElementById("phone").value;
         const subject = document.getElementById("subject").value;
         const message = document.getElementById("message").value;
@@ -439,6 +441,7 @@
           phone,
           subject,
           message,
+          service,
         };
         // console.log(payload);
         try {
@@ -451,7 +454,7 @@
             },
           });
           console.log(await response.json());
-          showPopup();
+          openpopup();
         } catch (e) {
           console.error(e);
         }
@@ -480,7 +483,7 @@
     <!--End of Tawk.to Script-->
 
     <!-- Success Popup Script Starting  -->
-    <script>
+    <!-- <script>
       function showPopup() {
         var popup = document.getElementById("popup");
         popup.style.display = "block";
@@ -495,7 +498,42 @@
           popup.style.display = "none";
         }
       };
-    </script>
+    </script> -->
     <!-- Success Popup Script Ending  -->
+
+    <!-- <script>
+      let popup = document.getElementById("popup");
+      function openpopup() {
+        popup.classList.add("open-popup");
+      }
+      function closepopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script> -->
+
+    <script>
+      document
+        .getElementById("open-btn")
+        .addEventListener("click", function () {
+          document.getElementById("modal-container").classList.add("show");
+          document.querySelector(".modal").classList.add("show");
+        });
+
+      document
+        .getElementById("close-btn")
+        .addEventListener("click", function () {
+          document.getElementById("modal-container").classList.remove("show");
+          document.querySelector(".modal").classList.remove("show");
+        });
+
+      document
+        .getElementById("modal-container")
+        .addEventListener("click", function (event) {
+          if (event.target === this) {
+            this.classList.remove("show");
+            document.querySelector(".modal").classList.remove("show");
+          }
+        });
+    </script>
   </body>
 </html>
