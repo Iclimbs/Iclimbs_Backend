@@ -171,7 +171,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <form class="wow fadeInUpBig" data-wow-duration="1.5s" id="myForm">
+            <form class="wow fadeInUpBig" data-wow-duration="1.5s">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <input
@@ -192,8 +192,13 @@
                   />
                 </div>
                 <div class="form-group col-md-6">
-                  <select name="services" id="service" class="form-control" required>
-                    <option value="">Our Services</option> 
+                  <select
+                    name="services"
+                    id="service"
+                    class="form-control"
+                    required
+                  >
+                    <option value="">Our Services</option>
                     <option value="Web Development">Web Development</option>
                     <option value="Mobile App Development">
                       Mobile App Development
@@ -422,49 +427,50 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-      const form = document.getElementById("myForm");
+      //   const form = document.getElementById("myForm");
 
-      async function sendData() {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const service = document.getElementById("service").value;
-        const phone = document.getElementById("phone").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
+      //   async function sendData() {
+      //     const name = document.getElementById("name").value;
+      //     const email = document.getElementById("email").value;
+      //     const service = document.getElementById("service").value;
+      //     const phone = document.getElementById("phone").value;
+      //     const subject = document.getElementById("subject").value;
+      //     const message = document.getElementById("message").value;
 
-        // Associate the FormData object with the form element
-        // const formData = new FormData(form);
-        // console.log("formdata",formData);
-        let payload = {
-          name,
-          email,
-          phone,
-          subject,
-          message,
-          service,
-        };
-        // console.log(payload);
-        try {
-          const response = await fetch("/api/v1/contact/new", {
-            method: "POST",
-            // Set the FormData instance as the request body
-            body: JSON.stringify(payload),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          console.log(await response.json());
-          openpopup();
-        } catch (e) {
-          console.error(e);
-        }
-      }
+      //     // Associate the FormData object with the form element
+      //     // const formData = new FormData(form);
+      //     // console.log("formdata",formData);
+      //     let payload = {
+      //       name,
+      //       email,
+      //       phone,
+      //       subject,
+      //       message,
+      //       service,
+      //     };
+      //     // console.log(payload);
+      //     try {
+      //       const response = await fetch("/api/v1/contact/new", {
+      //         method: "POST",
+      //         // Set the FormData instance as the request body
+      //         body: JSON.stringify(payload),
+      //         headers: {
+      //           "Content-Type": "application/json",
+      //         },
+      //       });
+      //       console.log(await response.json());
+      //       openpopup();
+      //     } catch (e) {
+      //       console.error(e);
+      //     }
+      //   }
 
-      // Take over form submission
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        sendData();
-      });
+      //   // Take over form submission
+      //   form.addEventListener("submit", (event) => {
+      //     event.preventDefault();
+      //     sendData();
+      //   });
+      //
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -511,6 +517,42 @@
       }
     </script> -->
 
+    <!-- CONTACT FORM SUBMISSION STARTING  -->
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const service = form.service.value;
+        const phone = form.phone.value;
+        const subject = form.subject.value;
+        const message = form.message.value;
+        const payload = {
+          name: name,
+          email: email,
+          service: service,
+          phone: phone,
+          subject: subject,
+          message: message,
+        };
+        const captcha = grecaptcha.getResponse();
+        if (!captcha.length > 0) {
+          throw new Error("Captcha is Required!");
+        }
+        const fd = new FormData(e.target);
+        const params = new URLSearchParams(fd);
+        fetch("/api/v1/contact/new", {
+          method: "POST",
+          body: payload,
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data))
+          .catch((err) => console.log(err));
+      });
+    </script>
+    <!-- CONTACT FORM SUBMISSION ENDING  -->
     <script>
       document
         .getElementById("open-btn")
