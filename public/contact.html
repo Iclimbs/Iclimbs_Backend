@@ -303,31 +303,6 @@
     </div>
   </section>
 
-  <!-- ======================================== Success Popup ======================================== -->
-
-  <!-- <div class="popup" id="popup">
-      <img src="./img/tick.png" alt="tick">
-      <h2>Thank You</h2>
-      <p>Your Details has been successfully submitted. Thanks!</p>
-      <button type="button" onclick="openPopup()">OK</button>
-    </div> -->
-
-  <div class="modal-container" id="modal-container">
-    <div class="modal">
-      <div class="modal-header">
-        <h2>Modal Title</h2>
-        <span class="close-btn" id="close-btn">&times;</span>
-      </div>
-      <div class="modal-content">
-        <p>
-          This is an eye-catching and beautiful modal popup. You can add any
-          content here!
-        </p>
-        <button class="btn">Action Button</button>
-      </div>
-    </div>
-  </div>
-
   <!-- ======================================== SCROLL TO TOP ICON ======================================== -->
   <a href="#" class="scroll-up">
     <i class="fal fa-chevron-up"></i>
@@ -349,52 +324,7 @@
   <!-- OWL CAROUSEL Plugin -->
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
-  <script>
-    //   const form = document.getElementById("myForm");
 
-    //   async function sendData() {
-    //     const name = document.getElementById("name").value;
-    //     const email = document.getElementById("email").value;
-    //     const service = document.getElementById("service").value;
-    //     const phone = document.getElementById("phone").value;
-    //     const subject = document.getElementById("subject").value;
-    //     const message = document.getElementById("message").value;
-
-    //     // Associate the FormData object with the form element
-    //     // const formData = new FormData(form);
-    //     // console.log("formdata",formData);
-    //     let payload = {
-    //       name,
-    //       email,
-    //       phone,
-    //       subject,
-    //       message,
-    //       service,
-    //     };
-    //     // console.log(payload);
-    //     try {
-    //       const response = await fetch("/api/v1/contact/new", {
-    //         method: "POST",
-    //         // Set the FormData instance as the request body
-    //         body: JSON.stringify(payload),
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //       });
-    //       console.log(await response.json());
-    //       openpopup();
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-    //   }
-
-    //   // Take over form submission
-    //   form.addEventListener("submit", (event) => {
-    //     event.preventDefault();
-    //     sendData();
-    //   });
-    //
-  </script>
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {},
@@ -410,35 +340,6 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
-
-  <!-- Success Popup Script Starting  -->
-  <!-- <script>
-      function showPopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "block";
-      }
-      document.getElementsByClassName("close")[0].onclick = function () {
-        var popup = document.getElementById("popup");
-        popup.style.display = "none";
-      };
-      window.onclick = function (event) {
-        var popup = document.getElementById("popup");
-        if (event.target == popup) {
-          popup.style.display = "none";
-        }
-      };
-    </script> -->
-  <!-- Success Popup Script Ending  -->
-
-  <!-- <script>
-      let popup = document.getElementById("popup");
-      function openpopup() {
-        popup.classList.add("open-popup");
-      }
-      function closepopup() {
-        popup.classList.remove("open-popup");
-      }
-    </script> -->
 
   <!-- CONTACT FORM SUBMISSION STARTING  -->
   <script>
@@ -460,7 +361,6 @@
         subject,
         message,
       };
-      console.log("payload", payload);
       const captcha = grecaptcha.getResponse();
       if (!captcha.length > 0) {
         throw new Error("Captcha is Required!");
@@ -480,30 +380,7 @@
     });
   </script>
   <!-- CONTACT FORM SUBMISSION ENDING  -->
-  <script>
-    document
-      .getElementById("open-btn")
-      .addEventListener("click", function () {
-        document.getElementById("modal-container").classList.add("show");
-        document.querySelector(".modal").classList.add("show");
-      });
-
-    document
-      .getElementById("close-btn")
-      .addEventListener("click", function () {
-        document.getElementById("modal-container").classList.remove("show");
-        document.querySelector(".modal").classList.remove("show");
-      });
-
-    document
-      .getElementById("modal-container")
-      .addEventListener("click", function (event) {
-        if (event.target === this) {
-          this.classList.remove("show");
-          document.querySelector(".modal").classList.remove("show");
-        }
-      });
-  </script>
+  
 </body>
 
 </html>
