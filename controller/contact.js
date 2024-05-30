@@ -3,6 +3,7 @@ const { ContactModel } = require("../model/contact.model")
 const contactRouter = express.Router()
 
 contactRouter.post("/new", async (req, res) => {
+    console.log(req.body);
     try {
         const { name, email, service, phone, message, subject } = req.body
         const contact = new ContactModel({ name, email, phone, service, message, subject })
