@@ -7,7 +7,7 @@ contactRouter.post("/new", async (req, res) => {
         const { name, email, service, phone, message } = req.body
         const contact = new ContactModel({ name, email, phone, service, message })
         await contact.save()
-        res.json({ status: "error", message: "Your Query is Successfully Registered" })
+        res.json({ status: "success", message: "Your Query is Successfully Registered" })
     } catch (error) {
         res.json({ status: "error", message: "Your Query Registration is Unsuccessful." })
     }
