@@ -229,6 +229,39 @@
     </div>
   </section>
 
+  <!-- POPUP FORMS STARTING   -->
+  <div class="popups" id="success">
+    <div class="popup-content">
+      <div class="imgbox">
+        <img src="./img/checked.png" alt="" class="img">
+      </div>
+      <div class="title">
+        <h3>Success!</h3>
+      </div>
+      <p class="para">Your account has been created successfully</p>
+      <form action="">
+        <a href="#" class="button" id="s_button">OKAY</a>
+      </form>
+    </div>
+  </div>
+
+  <div class="popups" id="error">
+    <div class="popup-content">
+      <div class="imgbox">
+        <img src="./img//cancel.png" alt="" class="img">
+      </div>
+      <div class="title">
+        <h3>Sorry :(</h3>
+      </div>
+      <p class="para">Something went wrong. Please try again!</p>
+      <form action="">
+        <a href="#" class="button" id="e_button">TRY AGAIN</a>
+      </form>
+    </div>
+  </div>
+  <!-- POPUP FORMS ENDING   -->
+
+
   <section id="googleMap">
     <div class="container">
       <div class="row">
@@ -382,19 +415,16 @@
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-
       const name = form.name.value;
       const email = form.email.value;
       const service = form.service.value;
       const phone = form.phone.value;
-      const subject = form.subject.value;
       const message = form.message.value;
       const payload = {
         name,
         email,
         service,
         phone,
-        subject,
         message,
       };
       const captcha = grecaptcha.getResponse();
@@ -411,11 +441,23 @@
         },
       })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => successpopup())
         .catch((err) => console.log(err));
     });
   </script>
   <!-- CONTACT FORM SUBMISSION ENDING  -->
+
+
+  <!-- POPUP CONTROL CSS STARTING  -->
+  <!-- <script>
+    function successpopup() {
+      const successpop = document.getElementsByClassName("popups")[0]
+      successpop.classList.add("show")
+    }
+  </script> -->
+
+  <!-- POPUP CONTROL CSS ENDING  -->
+
 
 </body>
 
