@@ -1892,7 +1892,6 @@ h2 {
   font-size: 42px;
 }
 
-.team-area-box .abhinav-kalra {}
 
 
 .abhinav-kalra a {
@@ -2529,10 +2528,15 @@ form input[type="submit"]:hover {
   background: white;
   box-shadow: 4px 4px 70px 10px rgb(0 0 0 / 11%);
   border-radius: 25px;
+  margin: auto;
 }
-
+.msg{
+  margin: auto;
+  margin-bottom: 20px;
+}
 .imgbox {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .img {
@@ -2566,6 +2570,16 @@ form input[type="submit"]:hover {
   margin: auto;
 }
 
+
+.message {
+  font-weight: 500;
+  width: 80%;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin: auto;
+}
 .button {
   width: 50%;
   display: block;
@@ -2580,6 +2594,7 @@ form input[type="submit"]:hover {
 
 #s_button {
   background: #32ba7c;
+ margin: auto;
 }
 
 #e_button {
