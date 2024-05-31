@@ -240,7 +240,7 @@
       </div>
       <p class="para">Your account has been created successfully</p>
       <form action="">
-        <a href="#" class="button" id="s_button">OKAY</a>
+        <a href="#" class="button" id="s_button" onclick="closesuccesspopup()">OKAY</a>
       </form>
     </div>
   </div>
@@ -441,20 +441,45 @@
         },
       })
         .then((res) => res.json())
-        .then((data) => successpopup())
-        .catch((err) => console.log(err));
+        .then((data) => {
+          if (data.status === "success") {
+            successpopup()
+          } else {
+            failurepopup()
+          }
+        })
+        .catch((err) => failurepopup());
     });
   </script>
   <!-- CONTACT FORM SUBMISSION ENDING  -->
 
 
   <!-- POPUP CONTROL CSS STARTING  -->
-  <!-- <script>
+  <script>
     function successpopup() {
       const successpop = document.getElementsByClassName("popups")[0]
       successpop.classList.add("show")
     }
-  </script> -->
+
+    function closesuccesspopup() {
+      document.querySelector("form").reset();
+      grecaptcha.reset();
+      const successpop = document.getElementsByClassName("popups")[0]
+      successpop.classList.remove("show")
+    }
+
+    function failurepopup() {
+      const successpop = document.getElementsByClassName("popups")[1]
+      successpop.classList.add("show")
+    }
+
+    function closefailurepopup() {
+      document.querySelector("form").reset();
+      grecaptcha.reset();
+      const successpop = document.getElementsByClassName("popups")[1]
+      successpop.classList.remove("show")
+    }
+  </script>
 
   <!-- POPUP CONTROL CSS ENDING  -->
 

@@ -3,12 +3,11 @@ const { ContactModel } = require("../model/contact.model")
 const contactRouter = express.Router()
 
 contactRouter.post("/new", async (req, res) => {
-    console.log(req.body);
     try {
-        const { name, email, service, phone, message, subject } = req.body
-        const contact = new ContactModel({ name, email, phone, service, message, subject })
+        const { name, email, service, phone, message } = req.body
+        const contact = new ContactModel({ name, email, phone, service, message })
         await contact.save()
-        res.json({ status: "success", message: "Your Query is Successfully Registered" })
+        res.json({ status: "error", message: "Your Query is Successfully Registered" })
     } catch (error) {
         res.json({ status: "error", message: "Your Query Registration is Unsuccessful." })
     }
