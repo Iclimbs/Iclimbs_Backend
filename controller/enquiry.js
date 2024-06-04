@@ -16,15 +16,5 @@ enquiryRouter.post("/new", async (req, res) => {
 
 
 
-enquiryRouter.get("/list", async (req, res) => {
-    try {
-        const enquiry = await EnquiryModel.find()
-        res.json({ status: "success", list: enquiry })
-    } catch (error) {
-        res.json({ status: "error", message: "List Fetch Failed" })
-    }
-})
-
-
 
 module.exports = { enquiryRouter }

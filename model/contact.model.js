@@ -1,31 +1,11 @@
 const mongoose = require("mongoose")
 const contactschema = mongoose.Schema(
     {
-        name: {
-            type: String,
-            required: true
-        },
-        service: {
-            type: String,
-            required: true
-        },
-        phone: {
-            type: Number,
-            required: true
-        },
-        email:
-        {
-            type: String,
-            required: true
-        },
-        message: {
-            type: String,
-            required: true
-        },
-        message: {
-            type: String,
-            required: true
-        }
+        name: String,
+        phone: Number,
+        email: String,
+        message: String,
+        subject: String
     }
 )
 const ContactModel = mongoose.model("contact", contactschema)
