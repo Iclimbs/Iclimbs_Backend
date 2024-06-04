@@ -13,6 +13,10 @@ app.use(cors())
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
+
+app.use("/",(req,res)=>{
+    res.json({Status:"Success",Message:"Welcome To Backend"})
+})
 app.use("/api/v1/",require("./routes/routes"))
 
 app.listen(process.env.port,async()=>{
