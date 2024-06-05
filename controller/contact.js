@@ -1,5 +1,6 @@
 const express = require("express")
 const { ContactModel } = require("../model/contact.model")
+const { admin } = require("../middleware/admin.middleware")
 const contactRouter = express.Router()
 
 contactRouter.post("/new", async (req, res) => {
@@ -16,7 +17,7 @@ contactRouter.post("/new", async (req, res) => {
 
 
 
-contactRouter.get("/list", async (req, res) => {
+contactRouter.get("/list", admin, async (req, res) => {
     try {
         const contact = await ContactModel.find()
         res.json({ status: "success", list: contact })
