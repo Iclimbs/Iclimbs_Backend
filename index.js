@@ -14,16 +14,17 @@ app.use(cors())
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
-app.use("/",(req,res)=>{
-    res.json({Status:"Success",Message:"Welcome To Backend"})
-})
-app.use("/api/v1/",require("./routes/routes"))
+// app.use("/", (req, res) => {
+//     res.json({ Status: "Success", Message: "Welcome To Backend" })
+// })
 
-app.listen(process.env.port,async()=>{
-try {
-await connection
-console.log(`Server is Up & Running At Port ${process.env.port}`);    
-} catch (error) {
-    console.log(error)
-}
+app.use("/api/v1/", require("./routes/routes"))
+
+app.listen(process.env.port, async () => {
+    try {
+        await connection
+        console.log(`Server is Up & Running At Port ${process.env.port}`);
+    } catch (error) {
+        console.log(error)
+    }
 })

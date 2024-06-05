@@ -18,17 +18,17 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 CareerRouter.post("/new", upload.single("resume"), async (req, res) => {
-    const { firstname, lastname, email, mobile } = req.body
+    const { firstname, lastname, email, phone } = req.body
     const emailExists = await CareerModel.findOne({ email: email })
     const fileName = req.file.filename;
     if (emailExists === null) {
         try {
-            const career = new CareerModel({ firstname, lastname, email, mobile, resume: fileName })
+            const career = new CareerModel({ firstname, lastname, email, phone, resume: fileName })
             const data = await career.save()
             const mailOptions = {
                 from: `${process.env.senderemail}`,
                 to: `${data.email}`,
-                subject: 'New User Has Applied For The Post.',
+                subject: 'New Candidate Has Applied For The Post.',
                 text: 'This is a test email with attachment.',
                 attachments: [
                     {
