@@ -3,7 +3,7 @@ const multer = require("multer");
 const { BlogModel } = require("../model/blog.model");
 const BlogRouter = express.Router();
 const path = require("path");
-const uploadPath = path.join(__dirname, "../resumes");
+const uploadPath = path.join(__dirname, "../public/images/blogs");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, uploadPath);
