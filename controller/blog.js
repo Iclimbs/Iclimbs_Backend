@@ -60,4 +60,31 @@ BlogRouter.get("/list", async (req, res) => {
   }
 });
 
+BlogRouter.patch("/update/:_id", async (req, res) => {
+  const { _id } = req.params;
+  try {
+    await BlogModel.findByIdAndUpdate(_id, req.body);
+    return res.json({ status: "success", message: "Blog Data Updated!!" });
+  } catch (error) {
+    return res.json({
+      status: "error",
+      message: "Blog Data Updation Unsuccessful!!",
+    });
+  }
+});
+
+BlogRouter.delete("/delete/:_id", async (req, res) => {
+  const { _id } = req.params;
+  try {
+    await BlogModel.findByIdAndDelete(_id)
+    return res.json({ status: "success", message: "Blog Data Deleted!!" });
+  } catch (error) {
+    return res.json({
+      status: "error",
+      message: "Blog Data Updation Unsuccessful!!",
+    });
+  }
+});
+
+
 module.exports = { BlogRouter };
