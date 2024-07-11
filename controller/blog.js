@@ -17,33 +17,19 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 BlogRouter.post("/new", upload.single("banner"), async (req, res) => {
-  const {
-    title,
-    heading1,
-    heading2,
-    heading3,
-    subheading1,
-    subheading2,
-    subheading3,
-    keywords,
-  } = req.body;
+  const { title, content, category, shortinfo } = req.body;
   const fileName = req.file.filename;
   try {
     const blog = new BlogModel({
       banner: fileName,
       title,
-      heading1,
-      heading2,
-      heading3,
-      subheading1,
-      subheading2,
-      subheading3,
-      keywords,
+      content,
+      category,
+      shortinfo,
     });
     await blog.save();
     return res.json({ status: "Success", message: "New Blog Post Created!!" });
   } catch (error) {
-    console.log(error);
     return res.json({
       status: "error",
       message: "New Blog Post Creation Unsuccessful!!",
@@ -54,6 +40,15 @@ BlogRouter.post("/new", upload.single("banner"), async (req, res) => {
 BlogRouter.get("/list", async (req, res) => {
   try {
     const list = await BlogModel.find({});
+    return res.json({ status: "success", list: list });
+  } catch (error) {
+    return res.json({ status: "error", message: "Fetching Denied" });
+  }
+});
+BlogRouter.get("/list/:_id", async (req, res) => {
+  const { _id } = req.params;
+  try {
+    const list = await BlogModel.findById(_id);
     return res.json({ status: "success", list: list });
   } catch (error) {
     return res.json({ status: "error", message: "Fetching Denied" });
@@ -76,7 +71,7 @@ BlogRouter.patch("/update/:_id", async (req, res) => {
 BlogRouter.delete("/delete/:_id", async (req, res) => {
   const { _id } = req.params;
   try {
-    await BlogModel.findByIdAndDelete(_id)
+    await BlogModel.findByIdAndDelete(_id);
     return res.json({ status: "success", message: "Blog Data Deleted!!" });
   } catch (error) {
     return res.json({
@@ -85,6 +80,5 @@ BlogRouter.delete("/delete/:_id", async (req, res) => {
     });
   }
 });
-
 
 module.exports = { BlogRouter };

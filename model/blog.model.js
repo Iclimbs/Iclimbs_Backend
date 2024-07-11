@@ -8,45 +8,16 @@ const blogschema = mongoose.Schema({
     type: String,
     required: true,
   },
-  heading1: {
+  content: {
     type: String,
     required: true,
   },
-  heading2: {
+  category: {
     type: String,
     required: true,
   },
-  heading3: {
+  shortinfo: {
     type: String,
-    required: true,
-  },
-  heading4: {
-    type: String,
-  },
-  heading5: {
-    type: String,
-  },
-  subheading1: {
-    type: String,
-    required: true,
-  },
-  subheading2: {
-    type: String,
-    required: true,
-  },
-
-  subheading3: {
-    type: String,
-    required: true,
-  },
-  subheading4: {
-    type: String,
-  },
-  subheading5: {
-    type: String,
-  },
-  keywords: {
-    type: [String],
     required: true,
   },
   CreatedAt: { type: Date, default: Date.now },

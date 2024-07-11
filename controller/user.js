@@ -6,8 +6,6 @@ const jwt = require('jsonwebtoken');
 const userRouter = express.Router()
 
 userRouter.post("/login", async (req, res) => {
-    console.log(req.body);
-    // return res.json({status:"Success",message:"Working Fine"})
     try {
         const { username, password } = req.body
         const userExists = await UserModel.find()
