@@ -6,20 +6,24 @@ const { transporter } = require("../service/transporter");
 const { PurposeModel } = require("../model/contact.pupose.model");
 contactRouter.post("/new", async (req, res) => {
   try {
-    const { name, email, phone, message, service } = req.body;
+    const { name, email, phone, message,company, service, country, state, city } = req.body;
     const servicename = await PurposeModel.find({ _id: service });
     const contact = new ContactModel({
       name,
       email,
       phone,
-      message,
+      message: message || null,
       service: servicename[0].name,
+      company:company || null,
+      country: country,
+      state: state,
+      city: city
     });
     await contact.save();
     const mailOptions = {
       from: `${process.env.senderemail}`,
-      to: ["uttamkrshaw@iclimbs.com", "codebase@iclimbs.com"],
-      subject: "New Candidate Has Applied For The Post.",
+      to: "leads@iclimbs.com",
+      subject: "New Registration in Leads Page",
       html: `<!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -228,6 +232,97 @@ contactRouter.post("/new", async (req, res) => {
                               ${servicename[0].name}
                             </td>
                           </tr>
+                           <tr>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                border-right: 1px solid #ededed;
+                                width: 35%;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.64);
+                              "
+                            >
+                              Company :
+                            </td>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                color: #455056;
+                              "
+                            >
+                              ${contact.company}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                border-right: 1px solid #ededed;
+                                width: 35%;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.64);
+                              "
+                            >
+                              Country :
+                            </td>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                color: #455056;
+                              "
+                            >
+                              ${contact.country}
+                            </td>
+                          </tr>
+                           <tr>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                border-right: 1px solid #ededed;
+                                width: 35%;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.64);
+                              "
+                            >
+                              State :
+                            </td>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                color: #455056;
+                              "
+                            >
+                              ${contact.state}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                border-right: 1px solid #ededed;
+                                width: 35%;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.64);
+                              "
+                            >
+                              City :
+                            </td>
+                            <td
+                              style="
+                                padding: 10px;
+                                border-bottom: 1px solid #ededed;
+                                color: #455056;
+                              "
+                            >
+                              ${contact.city}
+                            </td>
                           <tr>
                             <td
                               style="

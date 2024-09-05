@@ -11,11 +11,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1/", require("./routes/routes"));
 
-app.get("/", function (req, res) {
-  res.send(<h1>Welcome To iClimb Backend</h1>)
-});
-
-
 app.listen(process.env.port, async () => {
   try {
     await connection;

@@ -15,12 +15,23 @@ const contactschema = mongoose.Schema(
             required: true
         },
         message: {
-            type: String,
-            required: true
+            type: String
         },
         service: {
             type: String,
             required: true
+        },
+        company:{
+            type:String
+        },
+        country:{
+            type:String
+        },
+        state:{
+            type:String
+        },
+        city:{
+            type:String
         },
         CreatedAt: { type: Date, default: Date.now }
     }

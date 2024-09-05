@@ -10,6 +10,6 @@ router
   .use("/user", userRouter)
   .use("/purpose", purposeRouter)
   .use("/validate", require("../controller/validate"))
-  .use("/blog", BlogRouter);
+  .use("/blog", BlogRouter)
 
 module.exports = router;
