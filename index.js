@@ -11,6 +11,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1/", require("./routes/routes"));
 
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 app.listen(process.env.port, async () => {
   try {
     await connection;
