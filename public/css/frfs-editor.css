@@ -22,10 +22,11 @@
 }
 
 .form-group label {
-    font-size: 14px;
+    font-size: 16px;
     text-transform: capitalize;
     margin-bottom: 3px;
-    padding-left: 0
+    padding-left: 0;
+    color: white;
 }
 
 .form-group:has(.form-control[required])>label:after {

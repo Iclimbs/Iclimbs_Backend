@@ -643,13 +643,12 @@ export default class select extends HTMLElement {
 			case "get":
 				fetch(url)
 					.then((e) => e.json())
-					.then((r) => {
+					.then((r) => {						
 						let temp = Array.from(r.data || r);
 						let optionList = {};
-
 						temp.forEach((e) => {
 							optionList[e._id || e.id || e.code || e.name] = e.label || e.name;
-						});
+						});						
 						this.#optionList = optionList;
 						if (Object.keys(optionList).length == 0) {
 							this.hide();

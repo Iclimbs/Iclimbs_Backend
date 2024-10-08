@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="43px" viewBox="0 0 74 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-21.7%" y="-40.7%" width="143.3%" height="196.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.650980392   0 0 0 0 0.478431373   0 0 0 0 1  0 0 0 0.6 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="73.8629539%" y1="1.72293779%" x2="39.2094679%" y2="85.7640146%" id="linearGradient-2">
+            <stop stop-color="#A67AFF" offset="0%"></stop>
+            <stop stop-color="#8D5AFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="40.0566368%" y1="22.9930349%" x2="69.2475074%" y2="117.675121%" id="linearGradient-3">
+            <stop stop-color="#522ED8" offset="0%"></stop>
+            <stop stop-color="#8D5AFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="11-July" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="service-page" transform="translate(-81.000000, -2422.000000)">
+            <g id="Group-81" transform="translate(-32.000000, 1570.000000)">
+                <g id="Group-2" transform="translate(120.000000, 525.000000)">
+                    <g id="Page-1" filter="url(#filter-1)" transform="translate(0.000000, 333.000000)">
+                        <polygon id="Fill-1" fill="url(#linearGradient-2)" points="41.2731 0.0003 28.5011 21.4123 47.2281 21.4123 59.9991 0.0003"></polygon>
+                        <polygon id="Fill-2" fill="url(#linearGradient-3)" points="15.7302 0.0003 28.5012 21.4123 47.2282 21.4123 34.4562 0.0003"></polygon>
+                        <polygon id="Fill-3" fill="#A67AFF" points="15.8049 0.0003 -0.0001 26.4983 18.7259 26.4983 34.5319 0.0003"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

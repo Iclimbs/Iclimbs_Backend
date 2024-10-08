@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.0" id="katman_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 44 32.2" style="enable-background:new 0 0 44 32.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#32BEDD;}
+</style>
+<radialGradient id="SVGID_1_" cx="87.2206" cy="-58.5323" r="9.0088" gradientTransform="matrix(0.94 0 0 -0.94 -60.23 -39.2244)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.67" style="stop-color:#6BB9F2"/>
+	<stop  offset="0.74" style="stop-color:#61B4F1"/>
+	<stop  offset="0.85" style="stop-color:#47A8EF"/>
+	<stop  offset="0.99" style="stop-color:#1D94EB"/>
+	<stop  offset="1" style="stop-color:#1B93EB"/>
+</radialGradient>
+<path class="st0" d="M22,7.6c-4.7,0-8.5,3.8-8.5,8.5s3.8,8.5,8.5,8.5s8.5-3.8,8.5-8.5S26.7,7.6,22,7.6z"/>
+<circle class="st1" cx="22" cy="16.1" r="7"/>
+<circle class="st2" cx="20.4" cy="16.1" r="0.8"/>
+<path class="st2" d="M18.3,13.9h-0.4c-0.2,0-0.3,0.1-0.3,0.3v5.7c0,0.3,0.3,0.6,0.6,0.6c0,0,0,0,0,0h5.6c0.2,0,0.3-0.1,0.3-0.3
+	c0,0,0,0,0,0v-0.4c0-0.2-0.1-0.3-0.3-0.3h-5c-0.1,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0v-5.2C18.6,14,18.5,13.9,18.3,13.9
+	C18.3,13.9,18.3,13.9,18.3,13.9z"/>
+<circle class="st2" cx="23.5" cy="16.1" r="0.8"/>
+<path class="st2" d="M25.4,11.7h-5.2c-0.2,0-0.3,0.1-0.3,0.3c0,0,0,0,0,0v0.4c0,0.2,0.1,0.3,0.3,0.3h5c0.1,0,0.1,0.1,0.1,0.1V18
+	c0,0.2,0.1,0.3,0.3,0.3H26c0.2,0,0.3-0.1,0.3-0.3v-5.7c0-0.3-0.3-0.6-0.6-0.6H25.4z"/>
+</svg>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="54px" viewBox="0 0 66 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-26.0%" y="-28.9%" width="152.0%" height="168.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.11372549   0 0 0 0 0.478431373   0 0 0 0 0.933333333  0 0 0 0.411401721 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="73.9686761%" y1="85.7640147%" x2="73.9686787%" y2="21.8021278%" id="linearGradient-2">
+            <stop stop-color="#329DFF" offset="0%"></stop>
+            <stop stop-color="#2C62D4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="11-July" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="service-page" transform="translate(-105.000000, -1165.000000)">
+            <g id="s1" transform="translate(108.000000, 608.000000)">
+                <g id="Group-48">
+                    <g transform="translate(0.000000, 229.000000)">
+                        <g id="Group-47">
+                            <g id="Group-46" transform="translate(0.000000, 331.000000)">
+                                <g id="Group-27">
+                                    <g id="Group-4">
+                                        <g id="tech-icon">
+                                            <g id="Group-73">
+                                                <g id="Page-1" filter="url(#filter-1)" transform="translate(5.000000, 3.000000)">
+                                                    <polygon id="Fill-1" fill="url(#linearGradient-2)" points="12.8502783 -0.000330434783 0.000495652174 7.66410435 -0.000330434783 37.9096261 12.8502783 30.2460174"></polygon>
+                                                    <polygon id="Fill-2" fill="#329BFE" points="12.8502783 -0.000330434783 0.000495652174 7.66410435 14.6858435 7.66410435 27.5364522 -0.000330434783"></polygon>
+                                                    <polygon id="Fill-3" fill="#2E7DE7" points="12.8502783 30.2458522 0.000495652174 37.9094609 14.6858435 37.9094609 27.5364522 30.2458522"></polygon>
+                                                    <polygon id="Fill-4" fill="#2E7DE7" points="34.8795391 -0.000330434783 22.0297565 7.66410435 36.7142783 7.66410435 49.564887 -0.000330434783"></polygon>
+                                                    <polygon id="Fill-5" fill="#2D63D5" points="34.8795391 30.2458522 22.0297565 37.9094609 36.7142783 37.9094609 49.564887 30.2458522"></polygon>
+                                                    <polygon id="Fill-6" fill="#329BFE" points="49.5647217 -0.000330434783 36.7149391 7.66410435 36.714113 37.9096261 49.5647217 30.2460174"></polygon>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
