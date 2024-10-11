@@ -12,10 +12,10 @@ webContactRouter.post("/new", async (req, res) => {
             phone,
             message: message,
             service: service,
-            company: company,
-            country: country,
-            state: state,
-            city: city
+            company: company || null,
+            country: country || null,
+            state: state || null,
+            city: city || null
         });
 
         await contact.save();
